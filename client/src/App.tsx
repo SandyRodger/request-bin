@@ -20,6 +20,8 @@ function App() {
   useEffect(() => {
     const fetchBins = async () => {
       const bins = await webhookApi.getBins()
+      console.log("bins", bins);
+     
       setBins(bins)
     }
 

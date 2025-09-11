@@ -1,14 +1,16 @@
+
+
+
 import axios from 'axios'
 import type { Payload } from '../utils/types'
-
-const baseUrl = import.meta.env.VITE_WEBHOOK_URL
+const baseUrl = "http://54.209.103.119"
 const binsUrl = baseUrl + '/bins'
 const binUrl = (bin_id: string) => binsUrl + '/' + bin_id
 const recordsUrl = (bin_id: string) => binUrl(bin_id) + '/records'
 const recordUrl = (bin_id: string, record_id: string) => recordsUrl(bin_id) + '/' + record_id
 
 export const getBins = async () => {
-  const res = await axios.get(baseUrl, { withCredentials: true })
+  const res = await axios.get(binsUrl, { withCredentials: true })
   return res.data
 }
 
